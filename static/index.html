@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MoodTune</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>MoodTune</h1>
+        <div id="survey-container">
+            <div class="step active" id="step-1">
+                <h2>How are you feeling?</h2>
+                <div class="options">
+                    <button class="option-btn" data-value="motivation">🔥 Motivation</button>
+                    <button class="option-btn" data-value="chill">☁️ Chill</button>
+                    <button class="option-btn" data-value="focus">🧠 Focus</button>
+                    <button class="option-btn" data-value="sad">🌧️ Sad</button>
+                </div>
+            </div>
+            <div class="step" id="step-2">
+                <h2>Pick your style:</h2>
+                <div class="options" id="genre-options"></div>
+            </div>
+            <div class="step" id="step-3">
+                <h2>Set Intensity:</h2>
+                <div class="slider-wrapper">
+                    <input type="range" min="1" max="100" value="50" class="slider" id="energy-range">
+                    <div class="slider-labels">
+                        <span>Low Key</span>
+                        <span>High Energy</span>
+                    </div>
+                </div>
+                <button class="next-btn" onclick="nextStep(4)">Find Vibe</button>
+            </div>
+            <div class="step" id="step-4"><div class="loader"></div><p>Syncing with Spotify...</p></div>
+            <div class="step" id="step-5">
+                <div id="results-list"></div>
+                <button class="reset-btn" onclick="location.reload()">Start Over</button>
+            </div>
+        </div>
+    </div>
+    <script src="/static/script.js"></script>
+</body>
+</html>
